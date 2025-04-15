@@ -4,7 +4,6 @@ import pygame as pg
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-
 def main():
     pg.display.set_caption("はばたけ！こうかとん")
     screen = pg.display.set_mode((800, 600))
@@ -13,7 +12,6 @@ def main():
     bgf_img = pg.transform.flip(bg_img, True, False)
     kouka_img = pg.image.load("fig/3.png")
     kouka_img = pg.transform.flip(kouka_img, True, False)
-    # screen.blit(kouka_img, [300, 200])
     kouka_rct = kouka_img.get_rect()
     kouka_rct.center = 300, 200
     tmr = 0
@@ -50,7 +48,6 @@ def main():
         if tmr > 3200:
             tmr = 0
         clock.tick(200)
-
 
 if __name__ == "__main__":
     pg.init()
