@@ -16,8 +16,9 @@ def main():
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
-
+        screen.blit(bg_img, [-tmr+1600, 0])
         screen.blit(bg_img, [-tmr, 0])
+        
         screen.blit(kouka_img, [300, 200])
         pg.display.update()
         tmr += 1        
