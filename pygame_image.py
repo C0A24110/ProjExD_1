@@ -17,21 +17,28 @@ def main():
     kouka_rct = kouka_img.get_rect()
     kouka_rct.center = 300, 200
     tmr = 0
+
     while True:
+        x = 0
+        y = 0
         for event in pg.event.get():
             if event.type == pg.QUIT: return
             
         key_lst = pg.key.get_pressed()
         if key_lst[pg.K_UP]:
-            kouka_rct.move_ip((0, -1))
+            x = 0
+            y = -1
         if key_lst[pg.K_DOWN]:
-            kouka_rct.move_ip((0, 1))
+            x = 0
+            y = 1
         if key_lst[pg.K_LEFT]:
-            kouka_rct.move_ip((-1, 0))
+            x = -1
+            y = 0
         if key_lst[pg.K_RIGHT]:
-            kouka_rct.move_ip((2, 0))
+            x = 2
+            y = 0
         
-        kouka_rct.move_ip((-1, 0))
+        kouka_rct.move_ip((-1+x, 0+y))
 
         screen.blit(kouka_img, kouka_rct)
         screen.blit(bg_img, [-tmr, 0])
